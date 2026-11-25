@@ -16,6 +16,15 @@ QR codes for links, Wi-Fi, UPI and contacts.
 
 QR encoding by qrcode-generator (Kazuhiko Arase, MIT), vendored.
 
+## Demand
+
+Semrush estimates qr-code-generator.com at about 7.9 million visits a month. India reports roughly 555 million people onboarded on UPI, the payment system the UPI QR mode targets.
+
+- [Semrush: qr-code-generator.com](https://semrush.com/website/qr-code-generator.com/overview)
+- [IBEF: 55.49 crore UPI users by June 2026](https://www.ibef.org/news/upi-onboarded-55-49-crore-users-by-june-2026-transactions-reach-us-3-56-trillion-in-fy26)
+
+These figures measure demand for the task, from existing tools. They are third-party estimates or company claims, not usage of this tool.
+
 ## Privacy
 
 Everything runs in your browser. There is no backend, no analytics and no account. Nothing you enter is uploaded.
