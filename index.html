@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chihna - QR code generator for links, Wi-Fi, UPI and contacts</title>
+  <meta name="description" content="Make QR codes for a link, Wi-Fi login, UPI payment, contact card, email or SMS. No sign-up, no tracking redirects, no expiry. Download SVG or PNG.">
+  <link rel="stylesheet" href="base.css">
+  <style>
+    :root { --accent: #1d4ed8; }
+    @media (prefers-color-scheme: dark) { :root { --accent: #60a5fa; --accent-ink: #0a1f44; } }
+    .qr { display: grid; place-items: center; background: var(--surface-2); border-radius: var(--radius); padding: 20px; min-height: 300px; }
+    .qr svg { width: min(100%, 320px); height: auto; border-radius: 6px; }
+    .two { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .colors { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    .colors input[type=color] { width: 100%; height: 42px; padding: 2px; border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface-2); }
+  </style>
+</head>
+<body>
+  <header class="top"><div class="wrap">
+    <h1>Chihna</h1>
+    <p>QR codes that point straight at your content. No sign-up, no tracking redirect, and they never expire.</p>
+  </div></header>
+  <main><div class="wrap grid-2">
+    <section class="panel stack">
+      <label class="field">What should it open?
+        <select id="type">
+          <option value="url">Website link</option>
+          <option value="wifi">Wi-Fi login</option>
+          <option value="upi">UPI payment</option>
+          <option value="vcard">Contact card</option>
+          <option value="text">Plain text</option>
+          <option value="email">Email</option>
+          <option value="sms">SMS</option>
+        </select>
+      </label>
+      <div class="stack" id="fields"></div>
+      <details>
+        <summary class="small" style="cursor:pointer;font-weight:600">Style</summary>
+        <div class="stack" style="margin-top:12px">
+          <div class="colors">
+            <label class="field">Dots<input type="color" id="fg" value="#111111"></label>
+            <label class="field">Background<input type="color" id="bg" value="#ffffff"></label>
+          </div>
+          <label class="field">Error correction<span class="hint">Higher survives scratches and logos, but makes a denser code.</span>
+            <select id="ecl"><option value="L">Low, 7%</option><option value="M" selected>Medium, 15%</option><option value="Q">Quartile, 25%</option><option value="H">High, 30%</option></select>
+          </label>
+          <label class="field">PNG size (px)<input type="number" id="px" value="1024" min="128" max="4096" step="64"></label>
+        </div>
+      </details>
+    </section>
+    <section class="panel stack" aria-live="polite">
+      <div class="qr" id="qr"><p class="empty">Fill in the form to see your code.</p></div>
+      <p class="err" id="err" role="alert"></p>
+      <div class="row">
+        <button class="primary" id="png" type="button" disabled>Download PNG</button>
+        <button id="svg" type="button" disabled>Download SVG</button>
+      </div>
+      <p class="muted small mono" id="raw" style="word-break:break-all"></p>
+    </section>
+  </div></main>
+  <footer class="bottom"><div class="wrap">
+    <span>Chihna. Free and open source. QR encoder by Kazuhiko Arase, MIT.</span>
+    <span><a href="https://github.com/Linuxboii/chihna">Source</a> &nbsp; <a href="https://sushanth.avlokai.com">Made by Sushanth Kasturi</a></span>
+  </div></footer>
+  <script type="module" src="app.js"></script>
+</body>
+</html>

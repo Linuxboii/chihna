@@ -1,0 +1,12 @@
+{
+  "name": "chihna",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "QR codes for links, Wi-Fi, UPI and contacts",
+  "license": "MIT",
+  "scripts": {
+    "test": "node --test",
+    "start": "npx --yes serve -l 5173 ."
+  }
+}
